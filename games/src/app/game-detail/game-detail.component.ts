@@ -17,10 +17,10 @@ export class GameDetailComponent implements OnInit {
 
 	@Input() TheGame: Game = {
 		
-		title: "Overwatch",
-		year: 2016,
-		console: true,
-		PC: true
+		title: "",
+		year: 0,
+		console: false,
+		PC: false
 	};
 
 

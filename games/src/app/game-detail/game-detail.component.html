@@ -1,1 +1,22 @@
-<p>game-detail works!</p>
+<h2>Games</h2>
+<div *ngIf="!editMode">
+    <strong>Name:</strong> {{TheGame.title}} <br>
+    <strong>Year:</strong> {{TheGame.year}} <br>
+    <ng-container *ngIf="TheGame.console">
+        (On Console)
+    </ng-container>
+    <ng-container *ngIf="TheGame.PC">
+        (On PC)
+    </ng-container>
+    <button (click)="toEdit()">Edit</button>
+    <Button (click)="toDelete()">Delete</Button>
+</div>
+
+<div *ngIf="editMode">
+    Title <input type="text" [(ngModel)]="editTitle" /> <br>
+    Year <input type="text" [(ngModel)]="editYear" /> <br>
+    Console <input type="checkbox" [(ngModel)]="editConsole" />
+    PC <input type="checkbox" [(ngModel)]="editPC" /> <br><br>
+    <button (click)="save()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+</div>

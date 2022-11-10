@@ -6,9 +6,14 @@ import { Game } from './game';
 })
 export class GameService {
   TheList:Game[] = [
-    {title: 'Game1', year: 2020, console: false},
-    {title: 'Game2', year: 2022, console: true}
-  ]
-
+    {title: 'Overwatch', year: 2016, console: true, PC: true},
+    {title: 'Super Mario Bros', year: 1986, console: true, PC: false}
+  ];
+  
   constructor() { }
+
+  get(): Game[] {
+    return this.TheList;
+  }
+
 }

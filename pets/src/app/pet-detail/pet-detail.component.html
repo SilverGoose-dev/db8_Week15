@@ -1,0 +1,16 @@
+<div *ngIf="!editMode"> 
+    <!--This one is for view a pet-->
+    Name: {{ThePet.name}} <br> 
+    Species: {{ThePet.species}} <br> 
+    Year Born: {{ThePet.born}}
+    <button (click)="goToEditMode()">Edit</button>
+    <button (click)="deleteMe()">Delete</button>
+</div>
+<div *ngIf="editMode">
+<!--This one is for editing a pet-->
+<input type="text" [(ngModel)]="editName" />
+<input type="text" [(ngModel)]="editSpecies" />
+<input type="number" [(ngModel)]="editBorn" />
+<button (click)="save()">Save</button>
+<button (click)="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,25 @@
+<div>
+    <ng-container *ngFor="let bev of BevSrv.get()">
+		<app-bev-detail [TheBev]="bev" (delete)="doDelete($event)"></app-bev-detail>
+	</ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4>Add New</h4>
+    Name: <input type="text" [(ngModel)]="newName" ><br>
+    Size: <input type="number" [(ngModel)]="newSize" ><br>
+    <input type="checkbox" [(ngModel)]="newAlcohol" > Contains Alcohol<br>
+    <button (click)="addOne()">Save</button>
+
+
+</div>

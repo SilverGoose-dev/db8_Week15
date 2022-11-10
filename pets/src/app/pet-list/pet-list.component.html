@@ -1,0 +1,12 @@
+<ng-container *ngFor="let onepet of this.PetSrv.get()">
+    <!-- For delete, we have to listen for a delete event.-->
+    <app-pet-detail (delete)="deletePet($event)" [ThePet]="onepet"></app-pet-detail>
+</ng-container>
+
+<h2>Add Pet</h2>
+<div>
+    Name: <input type="text" [(ngModel)]="newName"> <br>
+    Species: <input type="text"[(ngModel)]="newSpecies"> <br>
+    Year Born: <input type="number"[(ngModel)]="newBorn"> <br>
+    <button (click)="add()">Add</button>
+</div>

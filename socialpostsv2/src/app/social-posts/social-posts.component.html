@@ -1,0 +1,14 @@
+<ng-container *ngFor="let post of Posts">
+    <app-single-post [ThePost]="post" (remove)="removeItem($event)" ></app-single-post>
+</ng-container>
+<br>
+<button *ngIf="!showAdd" (click)="showAddForm()">Add Thought</button>
+
+<div *ngIf="showAdd">
+    <h2>Add Thought</h2>
+    Title: <input type="text" [(ngModel)]="newTitle"><br />
+    Thought: <input type="text" [(ngModel)]="newThought"><br />
+    <button (click)="add()">Add</button>
+    <button (click)="cancel()">Cancel</button>
+
+</div>
